@@ -1,0 +1,238 @@
+﻿Mermid
+│   chuyentramission.sql
+│   MermaidDiagram.sln
+│   TextFile1.txt
+│
+├───MermaidDiagram.Abstractions
+│   │   MermaidDiagram.Abstractions.csproj
+│   │
+│   │
+│   ├───Interaction
+│   │       IMermaidNodeInteractionHandler.cs
+│   │       MermaidInteractionOptions.cs
+│   │       MermaidNodeClickEventArgs.cs
+│   │       MermaidNodeEventArgs.cs
+│   │       MermaidNodeHoverEventArgs.cs
+│   │
+│   ├───Navigation
+│   │       IWorkflowNavigator.cs
+│   │       WorkflowNavigationRequest.cs
+│   │       WorkflowNavigationResult.cs
+│   │
+│   │
+│   ├───Presentation
+│   │       IWorkflowViewRenderer.cs
+│   │       ViewPresentationMode.cs
+│   │       ViewRenderContext.cs
+│   │       ViewTransition.cs
+│   │
+│   └───Workflow
+│       ├───Actions
+│       │       IWorkflowAction.cs
+│       │       IWorkflowActionFactory.cs
+│       │       WorkflowActionMode.cs
+│       │       WorkflowActionResult.cs
+│       │
+│       ├───Definitions
+│       │       WorkflowActionDefinition.cs
+│       │       WorkflowDefinition.cs
+│       │       WorkflowNodeDefinition.cs
+│       │       WorkflowNodeKind.cs
+│       │
+│       ├───Runtime
+│       │       WorkflowContext.cs
+│       │       WorkflowDispatchResult.cs
+│       │       WorkflowResult.cs
+│       │
+│       └───Views
+│           │   IMermaidDiagramViewport.cs
+│           │   IWorkflowView.cs
+│           │   IWorkflowViewFactory.cs
+│           │   MermaidViewportAction.cs
+│           │   MermaidViewportRequest.cs
+│           │   MermaidViewportState.cs
+│           │   WorkflowViewDefinition.cs
+│           │   WorkflowViewMode.cs
+│           │   WorkflowViewResult.cs
+│           │
+│           ├───Schema
+│           │       WorkflowCollectionDefinition.cs
+│           │       WorkflowFieldDefinition.cs
+│           │       WorkflowFieldType.cs
+│           │       WorkflowViewSchema.cs
+│           │
+│           └───Validation
+│                   WorkflowFieldKind.cs
+│                   WorkflowValidationDefinition.cs
+│                   WorkflowValidationRule.cs
+│                   WorkflowValidationRuleType.cs
+│
+├───MermaidDiagram.Core
+│   │   MermaidDiagram.Core.csproj
+│   │
+│   │
+│   ├───Graph
+│   │       GraphAnalysisPipeline.cs
+│   │       GraphAnalysisResult.cs
+│   │       GraphAnalyzer.cs
+│   │       GraphLayerCalculator.cs
+│   │       MainPathCalculator.cs
+│   │       MermaidGraph.cs
+│   │       MermaidGraphBuilder.cs
+│   │       MermaidGraphLayer.cs
+│   │
+│   ├───Layout
+│   │   ├───Bounds
+│   │   │       GraphBoundsCalculator.cs
+│   │   │       MermaidBounds.cs
+│   │   │       ViewportFitter.cs
+│   │   │
+│   │   ├───Contract
+│   │   │       IMermaidLayoutEngine.cs
+│   │   │       MermaidLayoutDirection.cs
+│   │   │       MermaidLayoutDirectionExtensions.cs
+│   │   │       MermaidLayoutOptions.cs
+│   │   │       MermaidLayoutRequest.cs
+│   │   │
+│   │   ├───CoreLayout
+│   │   │       BranchLayoutEngine.cs
+│   │   │       GroupLayoutEngine.cs
+│   │   │       MainPathLayout.cs
+│   │   │       MermaidLayoutEngine.cs
+│   │   │       RootLayoutContext.cs
+│   │   │       RootLayoutPlanner.cs
+│   │   │
+│   │   ├───Result
+│   │   │       MermaidLayoutItem.cs
+│   │   │       MermaidLayoutResult.cs
+│   │   │
+│   │   └───Spacing
+│   │           AdaptiveSpacingCalculator.cs
+│   │           AdaptiveSpacingResult.cs
+│   │           CollisionResolver.cs
+│   │           MermaidAdaptiveSpacing.cs
+│   │
+│   ├───Models
+│   │       MermaidClassApplication.cs
+│   │       MermaidClassDefinition.cs
+│   │       MermaidDocument.cs
+│   │       MermaidEdge.cs
+│   │       MermaidEdgeStyle.cs
+│   │       MermaidNode.cs
+│   │       MermaidNodeShape.cs
+│   │       MermaidNodeStyle.cs
+│   │       MermaidSubgraph.cs
+│   │       MermaidSubgraphStyle.cs
+│   │
+│   │
+│   ├───Parsing
+│   │       IMermaidParser.cs
+│   │       MermaidEdgeParser.cs
+│   │       MermaidNodeParser.cs
+│   │       MermaidParser.cs
+│   │       MermaidRegex.cs
+│   │       MermaidSubgraphParser.cs
+│   │       MermaidToken.cs
+│   │       MermaidTokenizer.cs
+│   │       MermaidTokenType.cs
+│   │
+│   └───Workflow
+│       ├───Actions
+│       │       WorkflowActionBase.cs
+│       │       WorkflowActionFactory.cs
+│       │
+│       ├───Registry
+│       │       WorkflowNodeRegistry.cs
+│       │
+│       ├───Runtime
+│       │       WorkflowNodeDispatcher.cs
+│       │
+│       └───Views
+│           │   WorkflowViewBase.cs
+│           │   WorkflowViewFactory.cs
+│           │
+│           └───Schema
+│                   WorkflowFieldValueReader.cs
+│                   WorkflowViewSchemaBuilder.cs
+│                   WorkflowViewSchemaValidator.cs
+│
+├───MermaidDiagram.DevExpress
+│   │   MermaidDiagram.DevExpress.csproj
+│   │   MermaidDiagram.DevExpress.csproj.user
+│   │
+│   │
+│   ├───Controls
+│   │       MermaidDiagramControl.cs
+│   │       MermaidDiagramControl.resx
+│   │
+│   ├───Integration
+│   │       DevExpressWorkflowIntegration.cs
+│   │
+│   ├───Interaction
+│   │       MermaidNodeInteractionHandler.cs
+│   │
+│   ├───Mapping
+│   │       IMermaidDevExpressMapper.cs
+│   │       MermaidDevExpressMapper.cs
+│   │       MermaidEdgeStyleMapper.cs
+│   │       MermaidNodeStyleMapper.cs
+│   │       MermaidShapeMapper.cs
+│   │
+│   ├───Options
+│   │       MermaidDevExpressOptions.cs
+│   │
+│   ├───Pipeline
+│   │       IMermaidDiagramPipeline.cs
+│   │       MermaidDiagramPipeline.cs
+│   │       MermaidDiagramPipelineFactory.cs
+│   │
+│   ├───Presentation
+│   │       DevExpressWorkflowViewRenderer.cs
+│   │
+│   ├───Rendering
+│   │       IMermaidDiagramRenderer.cs
+│   │       MermaidDiagramItemFactory.cs
+│   │       MermaidDiagramRenderer.cs
+│   │       MermaidEdgeRenderer.cs
+│   │       MermaidGroupRenderer.cs
+│   │       MermaidNodeRenderer.cs
+│   │
+│   ├───Services
+│   │       MermaidDiagramService.cs
+│   │
+│   └───Viewport
+│           MermaidDiagramViewport.cs
+│           MermaidViewportOptions.cs
+│
+├───MermaidDiagram.Test
+│   │   App.config
+│   │   MermaidDiagram.Test.csproj
+│   │   MermaidDiagram.Test.csproj.bak
+│   │   MermaidTestResult.cs
+│   │   Program.cs
+│   │
+│   ├───Forms
+│   │       FormMain.cs
+│   │
+│   ├───Markdown
+│   │       IMermaidMarkdownLoader.cs
+│   │       MermaidCodeBlock.cs
+│   │       MermaidMarkdownLoader.cs
+│   │
+│   ├───Properties
+│   │       AssemblyInfo.cs
+│   │       Resources.Designer.cs
+│   │       Resources.resx
+│   │       Settings.Designer.cs
+│   │       Settings.settings
+│   │
+│   ├───TestCases
+│   ├───TestRuntime
+│   │       MermaidTestCase.cs
+│   │       MermaidTestCaseLoader.cs
+│   │       MermaidTestRunner.cs
+│   │
+│   └───UI
+│           MermaidTestCaseSelector.cs
+│           MermaidTestLog.cs
+│

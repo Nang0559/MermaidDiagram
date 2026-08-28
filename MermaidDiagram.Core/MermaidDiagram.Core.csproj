@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+
+		<!-- ========================================================= -->
+		<!-- TARGET -->
+		<!-- ========================================================= -->
+
+		<TargetFramework>net48</TargetFramework>
+
+		<!-- ========================================================= -->
+		<!-- C# -->
+		<!-- ========================================================= -->
+
+		<LangVersion>latest</LangVersion>
+
+		<!-- ========================================================= -->
+		<!-- COMMON -->
+		<!-- ========================================================= -->
+
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- ========================================================= -->
+		<!-- ASSEMBLY -->
+		<!-- ========================================================= -->
+
+		<AssemblyName>MermaidDiagram.Core</AssemblyName>
+		<RootNamespace>MermaidDiagram.Core</RootNamespace>
+
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\MermaidDiagram.Abstractions2\MermaidDiagram.Abstractions.csproj" />
+	</ItemGroup>
+
+</Project>

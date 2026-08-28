@@ -1,0 +1,102 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+
+		<!-- ========================================================= -->
+		<!-- TARGET -->
+		<!-- ========================================================= -->
+
+		<TargetFrameworks>
+			net9.0-android;
+			net9.0-ios;
+			net9.0-maccatalyst
+		</TargetFrameworks>
+
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">
+			$(TargetFrameworks);net9.0-windows10.0.19041.0
+		</TargetFrameworks>
+
+		<!-- ========================================================= -->
+		<!-- MAUI -->
+		<!-- ========================================================= -->
+
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+
+		<!-- ========================================================= -->
+		<!-- C# -->
+		<!-- ========================================================= -->
+
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- ========================================================= -->
+		<!-- PLATFORM -->
+		<!-- ========================================================= -->
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
+			15.0
+		</SupportedOSPlatformVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
+			15.0
+		</SupportedOSPlatformVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
+			21.0
+		</SupportedOSPlatformVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
+			10.0.17763.0
+		</SupportedOSPlatformVersion>
+
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
+			10.0.17763.0
+		</TargetPlatformMinVersion>
+
+		<!-- ========================================================= -->
+		<!-- ASSEMBLY -->
+		<!-- ========================================================= -->
+
+		<AssemblyName>MermaidDiagram.Maui</AssemblyName>
+		<RootNamespace>MermaidDiagram.Maui</RootNamespace>
+
+	</PropertyGroup>
+
+	<!-- ============================================================= -->
+	<!-- MAUI -->
+	<!-- ============================================================= -->
+
+	<ItemGroup>
+
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+
+	</ItemGroup>
+
+	<!-- ============================================================= -->
+	<!-- INTERNAL PROJECTS -->
+	<!-- ============================================================= -->
+
+	<ItemGroup>
+
+		<ProjectReference Include="..\MermaidDiagram.Abstractions2\MermaidDiagram.Abstractions.csproj" />
+
+		<ProjectReference Include="..\MermaidDiagram.Core\MermaidDiagram.Core.csproj" />
+
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Controls\" />
+	  <Folder Include="Integration\" />
+	  <Folder Include="Interaction\" />
+	  <Folder Include="Mapping\" />
+	  <Folder Include="ViewRendering\" />
+	  <Folder Include="Viewport\" />
+	  <Folder Include="ViewControls\" />
+	  <Folder Include="Services\" />
+	  <Folder Include="Rendering\" />
+	  <Folder Include="Pipeline\" />
+	  <Folder Include="Options\" />
+	</ItemGroup>
+
+</Project>

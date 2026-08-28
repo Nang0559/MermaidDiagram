@@ -1,0 +1,75 @@
+﻿
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+
+		<!-- ========================================================= -->
+		<!-- TARGET -->
+		<!-- ========================================================= -->
+
+		<TargetFramework>net48</TargetFramework>
+
+		<!-- ========================================================= -->
+		<!-- WINDOWS FORMS -->
+		<!-- ========================================================= -->
+
+		<UseWindowsForms>true</UseWindowsForms>
+
+		<!-- ========================================================= -->
+		<!-- C# -->
+		<!-- ========================================================= -->
+
+		<LangVersion>latest</LangVersion>
+
+		<!-- ========================================================= -->
+		<!-- COMMON -->
+		<!-- ========================================================= -->
+
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- ========================================================= -->
+		<!-- ASSEMBLY -->
+		<!-- ========================================================= -->
+
+		<AssemblyName>MermaidDiagram.DevExpress</AssemblyName>
+		<RootNamespace>MermaidDiagram.DevExpress</RootNamespace>
+
+	</PropertyGroup>
+
+
+	<!-- =========================================================== -->
+	<!-- MERMAID CORE                                                -->
+	<!-- =========================================================== -->
+
+	<ItemGroup>
+
+		<ProjectReference Include="..\MermaidDiagram.Core\MermaidDiagram.Core.csproj" />
+
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="DevExpress.Data.v25.2">
+	    <HintPath>C:\Program Files\DevExpress 25.2\Components\Bin\Framework\DevExpress.Data.v25.2.dll</HintPath>
+	  </Reference>
+	  <Reference Include="DevExpress.Diagram.v25.2.Core">
+	    <HintPath>C:\Program Files\DevExpress 25.2\Components\Bin\Framework\DevExpress.Diagram.v25.2.Core.dll</HintPath>
+	  </Reference>
+	  <Reference Include="DevExpress.Utils.v25.2">
+	    <HintPath>C:\Program Files\DevExpress 25.2\Components\Bin\Framework\DevExpress.Utils.v25.2.dll</HintPath>
+	  </Reference>
+	  <Reference Include="DevExpress.XtraDiagram.v25.2">
+	    <HintPath>C:\Program Files\DevExpress 25.2\Components\Bin\Framework\DevExpress.XtraDiagram.v25.2.dll</HintPath>
+	  </Reference>
+	  <Reference Include="DevExpress.XtraEditors.v25.2">
+	    <HintPath>C:\Program Files\DevExpress 25.2\Components\Bin\Framework\DevExpress.XtraEditors.v25.2.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+
+	<!-- =========================================================== -->
+	<!-- DEVEXPRESS WINFORMS RUNTIME                                 -->
+	<!-- =========================================================== -->
+
+</Project>
+
